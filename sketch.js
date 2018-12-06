@@ -12,199 +12,36 @@ let key = 'AIzaSyCpguaFMzdz0eBV16nAW5rquP8AaHttzYA'
 // https://mapstyle.withgoogle.com/
 let style = [
   {
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#242f3e"
-      }
-    ]
-  }, {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#746855"
-      }
-    ]
-  }, {
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#242f3e"
-      }
-    ]
-  }, {
-    "featureType": "administrative.land_parcel",
+    "featureType": "road.arterial",
     "stylers": [
       {
         "visibility": "off"
       }
     ]
-  }, {
-    "featureType": "administrative.locality",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#d59563"
-      }
-    ]
-  }, {
-    "featureType": "administrative.neighborhood",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }, {
-    "featureType": "poi",
-    "elementType": "labels.text",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }, {
-    "featureType": "poi",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#d59563"
-      }
-    ]
-  }, {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#263c3f"
-      }
-    ]
-  }, {
-    "featureType": "poi.park",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#6b9a76"
-      }
-    ]
-  }, {
-    "featureType": "road",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }, {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#38414e"
-      }
-    ]
-  }, {
-    "featureType": "road",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#212a37"
-      }
-    ]
-  }, {
-    "featureType": "road",
+  },
+  {
+    "featureType": "road.highway",
     "elementType": "labels",
     "stylers": [
       {
         "visibility": "off"
       }
     ]
-  }, {
-    "featureType": "road",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#9ca5b3"
-      }
-    ]
-  }, {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#746855"
-      }
-    ]
-  }, {
-    "featureType": "road.highway",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#1f2835"
-      }
-    ]
-  }, {
-    "featureType": "road.highway",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#f3d19c"
-      }
-    ]
-  }, {
-    "featureType": "transit",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#2f3948"
-      }
-    ]
-  }, {
-    "featureType": "transit.station",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#d59563"
-      }
-    ]
-  }, {
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#17263c"
-      }
-    ]
-  }, {
-    "featureType": "water",
-    "elementType": "labels.text",
+  },
+  {
+    "featureType": "road.local",
     "stylers": [
       {
         "visibility": "off"
       }
     ]
-  }, {
-    "featureType": "water",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#515c6d"
-      }
-    ]
-  }, {
-    "featureType": "water",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#17263c"
-      }
-    ]
   }
 ]
-
 // Options for map
 let options = {
-  lat: 0,
-  lng: 0,
-  zoom: 4,
+  lat: -25.190994,
+  lng: 15.362848,
+  zoom: 8,
   styles: style
 }
 
@@ -216,12 +53,12 @@ let canvas;
 let meteorites;
 
 function setup() {
-  canvas = createCanvas(800, 700);
+  canvas = createCanvas(window.innerWidth, window.innerHeight);
 
   // Create a tile map and overlay the canvas on top.
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
-
+    
   // Load the data
   meteorites = loadTable('../../data/Meteorite_Landings.csv', 'csv', 'header');
 
@@ -234,6 +71,7 @@ function setup() {
 
 // The draw loop is fully functional but we are not using it for now.
 function draw() {}
+
 
 function drawMeteorites() {
   // Clear the canvas

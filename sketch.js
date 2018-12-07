@@ -6,7 +6,7 @@ Data from NASA's Open Data Portal.(https://data.nasa.gov/Space-Science/Meteorite
 
 // API Key for Google Maps. Get one here:
 // https://developers.google.com/maps/web/
-let key = 'AIzaSyCpguaFMzdz0eBV16nAW5rquP8AaHttzYA'
+let key = 'AI za Sy Cp gu aF Mz dz 0e BV 16 nA W5 rq uP 8A aH tt zY A'
 
 // Style for Google Maps. This is optional. More information here:
 // https://mapstyle.withgoogle.com/
